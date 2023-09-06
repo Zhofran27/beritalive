@@ -26,6 +26,9 @@ public $title;
 #[Rule('required', message: 'Masukkan Isi Post')]
 #[Rule('min:3', message: 'Isi Post Minimal 3 Karakter')]
 public $content;
+
+public $date;
+
 /**
 * store
 *
@@ -41,6 +44,7 @@ public function store()
     'image' => $this->image->hashName(),
     'title' => $this->title,
     'content' => $this->content,
+    'date' => $this->date,
 ]);
 //flash message
 

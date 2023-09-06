@@ -50,6 +50,18 @@ Create Post - Belajar Livewire 3 di XII RPL
                 @enderror
                 </div>
 
+                <div class="form-group mb-4">
+                    <label class="fw-bold">JUDUL</label>
+                    <input type="date" class="form-control @error('date') is-invalid @enderror" wire:model="date" placeholder="Masukkan Judul Post">
+    
+                    <!-- error message untuk title -->
+                    @error('date')
+                    <div class="alert alert-danger mt-2">
+                    {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+
                 <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
 
                 <button type="reset" class="btn btn-md btn-warning">RESET</button>

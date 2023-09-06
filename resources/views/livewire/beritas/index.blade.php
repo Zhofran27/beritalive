@@ -35,7 +35,7 @@ Data Posts - Belajar Livewire 3 di XII RPL
         </td>
         <td>{{ $berita->title }}</td>
         <td>{!! $berita->content !!}</td>
-        <td>{{ $berita->title }}</td>
+        <td>{{ $berita->date }}</td>
         <td class="text-center">
         <a href="/edit/{{ $berita->id }}" wire:navigate class="btn btn-sm btn-primary">EDIT</a>
 
