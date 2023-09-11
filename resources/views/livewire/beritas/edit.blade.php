@@ -1,5 +1,5 @@
 @section('title')
-Create Post - Belajar Livewire 3 di XII RPL
+Edit Post - Belajar Livewire 3 di XII RPL
 @endsection
 
 <div class="container mt-5 mb-5">
@@ -8,11 +8,13 @@ Create Post - Belajar Livewire 3 di XII RPL
             <div class="card border-0 shadow-sm rounded">
                 <div class="card-body">
 
-                <form wire:submit="store" enctype="multipart/form-data">
+                <form wire:submit="update" enctype="multipart/form-data">
 
                 <div class="form-group mb-4">
                 <label class="fw-bold">GAMBAR</label>
-                <input type="file" class="form-control @error('image') is-invalid @enderror" wire:model="image">
+                <input type="file" class="form-control
+
+                @error('image') is-invalid @enderror" wire:model="image">
 
                 <br>
                 @if ($image)
@@ -24,12 +26,14 @@ Create Post - Belajar Livewire 3 di XII RPL
                 <div class="alert alert-danger mt-2">
                 {{ $message }}
                 </div>
+
                 @enderror
                 </div>
-
                 <div class="form-group mb-4">
                 <label class="fw-bold">JUDUL</label>
-                <input type="text" class="form-control @error('title') is-invalid @enderror" wire:model="title" placeholder="Masukkan Judul Post">
+                <input type="text" class="form-control
+
+                @error('title') is-invalid @enderror" wire:model="title" placeholder="Masukkan Judul Post">
 
                 <!-- error message untuk title -->
                 @error('title')
@@ -38,10 +42,12 @@ Create Post - Belajar Livewire 3 di XII RPL
                 </div>
                 @enderror
                 </div>
-                
+
                 <div class="form-group mb-4">
                 <label class="fw-bold">KONTEN</label>
-                <textarea class="form-control @error('content') is-invalid @enderror" wire:model="content" rows="5" placeholder="Masukkan Konten Post"></textarea>
+                <textarea class="form-control
+
+                @error('content') is-invalid @enderror" wire:model="content" rows="5" placeholder="Masukkan Konten Post"></textarea>
 
                 <!-- error message untuk content -->
                 @error('content')
@@ -52,7 +58,7 @@ Create Post - Belajar Livewire 3 di XII RPL
                 </div>
 
                 <div class="form-group mb-4">
-                    <label class="fw-bold">JUDUL</label>
+                    <label class="fw-bold">TANGGAL</label>
                     <input type="date" class="form-control @error('date') is-invalid @enderror" wire:model="date" placeholder="Masukkan Judul Post">
     
                     <!-- error message untuk title -->
@@ -63,7 +69,7 @@ Create Post - Belajar Livewire 3 di XII RPL
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
+                <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
 
                 <button type="reset" class="btn btn-md btn-warning">RESET</button>
 

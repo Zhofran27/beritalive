@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('beritas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_kategori');
+            $table->foreign('id_kategori')->references('id_kategori')->on('kategoris')->onDelete('cascade');
             $table->string('image');
             $table->string('title');
             $table->text('content');
             $table->date('date');
             $table->timestamps();
+
+            
         });
     }
 

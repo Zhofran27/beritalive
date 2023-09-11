@@ -20,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', App\Livewire\Beritas\Index::class)->name('beritas.index');
 
 Route::get('/create', App\Livewire\Beritas\Create::class)->name('beritas.create');
+
+Route::get('/edit/{id}', App\Livewire\Beritas\Edit::class)->name('beritas.edit');

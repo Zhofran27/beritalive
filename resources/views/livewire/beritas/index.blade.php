@@ -22,6 +22,7 @@ Data Posts - Belajar Livewire 3 di XII RPL
         <th scope="col">Image</th>
         <th scope="col">Title</th>
         <th scope="col">Content</th>
+        <th scope="col">Date</th>
         <th scope="col" style="width:15%">Actions</th>
 
         </tr>
@@ -30,7 +31,7 @@ Data Posts - Belajar Livewire 3 di XII RPL
         @forelse ($beritas as $berita)
         <tr>
         <td class="text-center">
-        <img src="{{ asset('/storage/posts/'.$berita->image) }}" class="rounded" style="width:150px">
+        <img src="{{ asset('/storage/beritas/'.$berita->image) }}" class="rounded" style="width:150px">
 
         </td>
         <td>{{ $berita->title }}</td>
@@ -39,8 +40,9 @@ Data Posts - Belajar Livewire 3 di XII RPL
         <td class="text-center">
         <a href="/edit/{{ $berita->id }}" wire:navigate class="btn btn-sm btn-primary">EDIT</a>
 
-        <button class="btn btn-sm btn-danger">DELETE</button>
+        {{-- <button class="btn btn-sm btn-danger">DELETE</button> --}}
 
+        <button wire:click="destroy({{ $post->id }})" class="btn btn-sm btn-danger">DELETE</button>
         </td>
         </tr>
         @empty
