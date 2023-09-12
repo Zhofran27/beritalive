@@ -11,4 +11,9 @@ class Berita extends Model
     protected $fillable =[
         'image','title','content','date'
     ];
+
+    public function kategoris()
+    {
+        return $this->belongsTo(Kategori::class);
+    }
 }

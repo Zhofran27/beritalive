@@ -11,4 +11,9 @@ class Kategori extends Model
     protected $fillable =[
         'kateg',
     ];
+
+    public function berita()
+    {
+        return $this->hasMany(Berita::class);
+    }
 }
